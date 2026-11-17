@@ -1,0 +1,32 @@
+name: 'AI Agent Readiness Check'
+description: 'Score how well ChatGPT, Claude and Perplexity agents can find, read and use your website, and fail the build if they get blocked.'
+author: 'Turingate'
+branding:
+  icon: 'shield'
+  color: 'purple'
+inputs:
+  url:
+    description: 'Website to check, e.g. example.com or https://www.example.com'
+    required: true
+  min-score:
+    description: 'Fail if the agent-readiness score (0-100) is below this'
+    required: false
+    default: '0'
+  fail-on-blocked-assistants:
+    description: 'Fail if robots.txt or the firewall blocks AI assistants (ChatGPT-User, Claude-User, Perplexity-User) that act for your customers'
+    required: false
+    default: 'true'
+  api:
+    description: 'Turingate server'
+    required: false
+    default: 'https://reverse-captcha.onrender.com'
+outputs:
+  score:
+    description: 'Agent-readiness score out of 100'
+  grade:
+    description: 'Letter grade (A to F)'
+  report-url:
+    description: 'Link to the full result with fixes'
+runs:
+  using: 'node20'
+  main: 'index.js'
