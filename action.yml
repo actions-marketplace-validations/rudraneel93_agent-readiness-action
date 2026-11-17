@@ -1,5 +1,5 @@
 name: 'AI Agent Readiness Check'
-description: 'Score how well ChatGPT, Claude and Perplexity agents can find, read and use your website, and fail the build if they get blocked.'
+description: 'Check that ChatGPT, Claude and Perplexity agents can use your website, and fail the build if they get blocked.'
 author: 'Turingate'
 branding:
   icon: 'shield'
